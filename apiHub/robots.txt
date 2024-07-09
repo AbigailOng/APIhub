@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /dashboard.html/
+Disallow: /sign-in.html/
+Disallow: /sign-up.html/
+Allow: /*.html$      

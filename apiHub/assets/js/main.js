@@ -144,14 +144,14 @@
     });
   });
 
-/**
-   * Privacy Policy Toggle
-   */
-document.querySelectorAll('.pp-item h3, .pp-item .pp-toggle').forEach((ppItem) => {
-  ppItem.addEventListener('click', () => {
-    ppItem.parentNode.classList.toggle('pp-active');
+  /**
+     * Privacy Policy Toggle
+     */
+  document.querySelectorAll('.pp-item h3, .pp-item .pp-toggle').forEach((ppItem) => {
+    ppItem.addEventListener('click', () => {
+      ppItem.parentNode.classList.toggle('pp-active');
+    });
   });
-});
 
   /**
    * Init swiper sliders
@@ -236,3 +236,74 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const links = document.querySelectorAll('.services-list a');
+  const content_service = document.querySelectorAll('.content-service');
+  const offset = document.querySelector('.header').offsetHeight; // Get the height of the sticky top bar
+
+  links.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var id_link = document.querySelector("#" + link.getAttribute('data-id'));
+
+      content_service.forEach(link => link.classList.remove('active'));
+      id_link.classList.add('active');
+      // Remove 'active' class from all links
+      links.forEach(link => link.classList.remove('active'));
+      // Add 'active' class to the clicked link
+      this.classList.add('active');
+
+      // Smooth scroll to the target section with offset
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - offset, // Subtract the offset
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+});
+
+
+
+// Submit contact 
+
+$("#submitContact").click(() => {
+  var name = $("#name-field").val();
+  var email = $("#email-field").val();
+  var subject = $("#subject-field").val();
+  var message = $("#message-field").val();
+  if (name && email && subject && message) {
+    window.alert("Submitted");
+    var jsonOject = {
+      data: {
+        "name": name,
+        "email": email,
+        "subject": subject,
+        "message": message,
+        "host": window.location.hostname,
+      }
+    }
+
+    //ajax
+    $.ajax({
+      url: 'https://sgaihub.com/collectFeedback',
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify(jsonOject),
+      success: function (response) {
+        console.log('Success: ', response);
+      },
+      error: function (xhr, status, error) {
+        console.log("Error", error);
+      }
+    });
+  } else {
+    window.alert("Missing fieds")
+  }
+})

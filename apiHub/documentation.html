@@ -31,7 +31,22 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
+    <style>
+      .code-container {
+          position: relative;
+          background-color: #f8f9fa;
+          padding: 15px;
+          border-radius: 5px;
+      }
 
+      .copy-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+          color: #007bff;
+      }
+  </style>
   </head>
 
   <body class="service-details-page">
@@ -65,35 +80,124 @@
 
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
               <div class="services-list">
-                <a href="#" class="active">Getting Started Guide</a>
-                <a href="#">API Reference</a>
-                <a href="#">Authentication</a>
-                <a href="#">Error Handling</a>
-                <a href="#">FAQs</a>
-                <a href="#">Support</a>
+                <a href="#GettingStarted" class="active">Getting Started
+                  Guide</a>
+                <a href="#getIPAddressAPI">GET IP Address API</a>
+                <a href="#comingSoonSection">More Free APIs Are Coming Soon</a>
               </div>
-      
+
               <h4>Comprehensive API Documentation</h4>
-              <p>Our documentation provides all the information you need to integrate and utilize our APIs effectively. From getting started guides to detailed references, everything is covered.</p>
+              <p>Our documentation provides all the information you need to
+                integrate and utilize our APIs effectively. From getting started
+                guides to detailed references, everything is covered.</p>
             </div>
-      
+
             <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-              <h3>Getting Started with API Hub Singapore</h3>
+              <h3 id="GettingStarted">Getting Started with API Hub
+                Singapore</h3>
               <p>
-                Welcome to the API Hub Singapore documentation. Here, you'll find all the necessary details to help you integrate our APIs into your projects seamlessly. Whether you're new to API integration or an experienced developer, our guides and references will support your needs.
+                Welcome to the API Hub Singapore documentation. Here, you'll
+                find all the necessary details to help you integrate our APIs
+                into your projects seamlessly. Whether you're new to API
+                integration or an experienced developer, our guides and
+                references will support your needs.
               </p>
               <ul>
-                <li><i class="bi bi-check-circle"></i> <span>Quick Start Guide: Step-by-step instructions to begin using our APIs.</span></li>
-                <li><i class="bi bi-check-circle"></i> <span>API Reference: Comprehensive details about endpoints, parameters, and responses.</span></li>
-                <li><i class="bi bi-check-circle"></i> <span>Authentication: Information on how to securely access our APIs.</span></li>
-                <li><i class="bi bi-check-circle"></i> <span>Error Handling: Tips on managing errors and troubleshooting.</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Quick Start Guide:
+                    Step-by-step instructions to begin using our
+                    APIs.</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>API Reference:
+                    Comprehensive details about endpoints, parameters, and
+                    responses.</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Authentication:
+                    Information on how to securely access our APIs.</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Error Handling:
+                    Tips on managing errors and troubleshooting.</span></li>
               </ul>
               <p>
-                Our APIs are designed to be intuitive and developer-friendly, but we understand that questions may arise. The documentation is structured to provide you with clear and concise information, ensuring you can implement our solutions efficiently.
+                Our APIs are designed to be intuitive and developer-friendly,
+                but we understand that questions may arise. The documentation is
+                structured to provide you with clear and concise information,
+                ensuring you can implement our solutions efficiently.
               </p>
               <p>
-                If you need additional support, our customer service team is available to assist you. We offer comprehensive support options, including FAQs, troubleshooting guides, and direct contact with our experts.
+                If you need additional support, our customer service team is
+                available to assist you. We offer comprehensive support options,
+                including FAQs, troubleshooting guides, and direct contact with
+                our experts.
               </p>
+
+              <!-- //--------- -->
+              <h2 id="getIPAddressAPI">GET IP Address Endpoint</h2>
+              <p>You can test this URL out on your browser. Simply copy and
+                paste this URL to your broswer
+                search bar.</p>
+              <div class="code-container">
+
+                <pre><code id="codeBlock">https://sgapihub.com/getIPAddress</code></pre>
+                <span class="copy-btn" id='copyButtonOne'
+                  onclick="copyCode('codeBlock','copyButtonOne')">&#x1F4CB;
+                  Copy</span>
+              </div>
+              <!-- Second code section -->
+              <br>
+              <br>
+              <p>You can also integrate this URL into your existing appllication
+                using AJAX!</p>
+              <div class="code-container">
+
+                <pre><code id="codeBlockTwo">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"&gt;&lt;/script&gt;
+                  
+&lt;script&gt;
+$.ajax({
+url: 'https://sgapihub.com/getIPAddress',
+type: 'GET',
+success: function (response) {
+console.log('Success:', response);
+},
+error: function (xhr, status, error) {
+console.error('Error:', error);
+}
+});
+&lt;/script&gt;</code></pre>
+
+                <span class="copy-btn" id="copyButtonTwo"
+                  onclick="copyCode('codeBlockTwo','copyButtonTwo')">&#x1F4CB;
+                  Copy</span>
+              </div>
+              <!-- Third code section -->
+              <br>
+              <br>
+              <p>You can also test this endpoint using Python program with
+                request library!</p>
+              <div class="code-container">
+
+                <pre><code id="codeBlockThree">import requests def request_and_print(url):
+try:
+response = requests.get(url)
+# Check if the request was successful (status code 200)
+if response.status_code == 200:
+  print("Response from", url)
+  print("-----------------------")
+  print(response.text)  # Print the content of the response
+else:
+  print(f"Failed to retrieve data from {url}. Status code: {response.status_code}")
+except requests.exceptions.RequestException as e:
+print(f"An error occurred: {e}")
+
+# Example usage:
+url = "https://sgapihub.com/getIPAddress"
+request_and_print(url)</code></pre>
+
+                <span class="copy-btn" id="copyButtonThree"
+                  onclick="copyCode('codeBlockThree','copyButtonThree')">📋
+                  Copy</span>
+              </div>
+              <!-- End of third code section -->
+              <br>
+              <h2 id="comingSoonSection">Keep An Eye Here In This Page. More
+                Free APIs Are Coming Soon..</h2>
+
             </div>
 
           </div>
@@ -130,7 +234,35 @@
     <script src="assets/js/header.js"></script>
     <script src="./assets/js/footer.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+ function copyCode(codeID, buttonID) {
+            const codeBlock = document.getElementById(codeID).innerText;
+            const textarea = document.createElement('textarea');
+            textarea.value = codeBlock;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
 
+            const copyBtn = document.querySelector('#' + buttonID);
+            copyBtn.innerText = 'Copied!';
+            setTimeout(() => {
+                copyBtn.innerText = '📋 Copy';
+            }, 1000); // Reset text after 2 seconds
+        }
+      fetch('https://sgapihub.com/getIPAddress')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+          document.getElementById('ip-address').textContent = data.ip;
+          document.getElementById('reqCountry').textContent = data.country;
+        })
+        .catch(error => {
+          console.error('Error fetching IP address:', error);
+          document.getElementById('ip-address').textContent = 'Error fetching IP address';
+        });
+    
+    </script>
   </body>
 
 </html>

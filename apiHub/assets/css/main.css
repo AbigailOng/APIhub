@@ -1,29 +1,40 @@
-
 /* Fonts */
 :root {
-  --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Raleway",  sans-serif;
+  --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Raleway", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #7a6960; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #eb5d1e; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+:root {
+  --background-color: #ffffff;
+  /* Background color for the entire website, including individual sections */
+  --default-color: #212529;
+  /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #7a6960;
+  /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #eb5d1e;
+  /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff;
+  /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff;
+  /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #212529;  /* The default color of the main navmenu links */
-  --nav-hover-color: #eb5d1e; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #eb5d1e; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #212529;
+  /* The default color of the main navmenu links */
+  --nav-hover-color: #eb5d1e;
+  /* Applied to main navmenu links when they are hovered over or active */
+  --nav-mobile-background-color: #ffffff;
+  /* Used as the background color for mobile navigation menu */
+  --nav-dropdown-background-color: #ffffff;
+  /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+  --nav-dropdown-color: #212529;
+  /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #eb5d1e;
+  /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -145,7 +156,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  max-height: 90px;
   margin-right: 8px;
 }
 
@@ -158,7 +169,9 @@ h6 {
 }
 
 .header .btn-getstarted,
-.header .btn-getstarted:focus {
+.header .btn-getstarted:focus,
+.header .btn-sign-in,
+.header .btn-sign-in:focus {
   color: var(--contrast-color);
   background: var(--accent-color);
   font-size: 14px;
@@ -168,10 +181,32 @@ h6 {
   transition: 0.3s;
 }
 
+.header .btn-sign-up,
+.header .btn-sign-up:focus {
+  color: var(--contrast-color);
+  background: var(--heading-color);
+  font-size: 14px;
+  padding: 8px 25px;
+  margin: 0 0 0 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
 .header .btn-getstarted:hover,
-.header .btn-getstarted:focus:hover {
+.header .btn-getstarted:focus:hover,
+.header .btn-sign-in:hover,
+.header .btn-sign-in:focus:hover {
   color: var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+.header .btn-sign-up:hover,
+.header .btn-sign-up:focus:hover {
+  background: color-mix(in srgb, var(--heading-color), transparent 15%);
+}
+
+.sign--mb {
+  display: none;
 }
 
 @media (max-width: 1200px) {
@@ -189,7 +224,18 @@ h6 {
     order: 3;
   }
 }
-
+@media (max-width: 678px) {
+  .sign--mb {
+    display: flex;
+    align-items:center ;
+    margin: 0 auto;
+    width: fit-content;
+  }
+  .header .btn-sign.btn-sign-mb{
+    display: block;
+  color: var(--contrast-color);
+  }
+}
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -905,6 +951,13 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+.content-service{
+  display: none;
+}
+
+.content-service.active{
+  display: block;
+}
 .services .service-item {
   box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
   background-color: var(--surface-color);
@@ -1495,6 +1548,7 @@ section,
   margin-right: 8px;
   color: var(--accent-color);
 }
+
 /*--------------------------------------------------------------
 # Privacy Policy Section
 --------------------------------------------------------------*/

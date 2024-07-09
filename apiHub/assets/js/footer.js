@@ -27,7 +27,7 @@ section_footer.innerHTML = `<div class="footer-newsletter">
           <div class="footer-contact pt-3">
             <p>50 Raffles Pl</p>
             <p>Level 4-5 Singapore Land Tower, Singapore 048623</p>
-            <p><strong>Email:</strong> <span>example123@gmail.com </span></p>
+            <p><strong>Email:</strong> <span>team@sgapihub.com </span></p>
           </div>
         </div>
 
@@ -83,51 +83,51 @@ var slug_f_policy = document.querySelector('#slug_f_policy');
 var list_sub_services = document.querySelectorAll('.ref_service');
 
 if (slug_f_home) {
-    slug_f_home.addEventListener('click', function (e) {
-        e.preventDefault();
-        openLink(this);
-    });
+  slug_f_home.addEventListener('click', function (e) {
+    e.preventDefault();
+    openLink(this);
+  });
 }
 if (slug_f_service) {
-    slug_f_service.addEventListener('click', function (e) {
-        e.preventDefault();
-        openLink(this);
-    });
+  slug_f_service.addEventListener('click', function (e) {
+    e.preventDefault();
+    openLink(this);
+  });
 }
 if (slug_f_portfolio) {
-    slug_f_portfolio.addEventListener('click', function (e) {
-        e.preventDefault();
-        openLink(this);
-    });
+  slug_f_portfolio.addEventListener('click', function (e) {
+    e.preventDefault();
+    openLink(this);
+  });
 }
 if (slug_f_contact) {
-    slug_f_contact.addEventListener('click', function (e) {
-        e.preventDefault();
-        openLink(this);
-    });
+  slug_f_contact.addEventListener('click', function (e) {
+    e.preventDefault();
+    openLink(this);
+  });
 }
 if (slug_f_documentation) {
-    slug_f_documentation.addEventListener('click', function (e) {
-        e.preventDefault();
-        openLink(this);
-    });
+  slug_f_documentation.addEventListener('click', function (e) {
+    e.preventDefault();
+    openLink(this);
+  });
 }
 if (slug_f_policy) {
-    slug_f_policy.addEventListener('click', function (e) {
-        e.preventDefault();
-        openLink(this);
-    });
+  slug_f_policy.addEventListener('click', function (e) {
+    e.preventDefault();
+    openLink(this);
+  });
 }
 
 list_sub_services.forEach(function (item) {
-    item.addEventListener('click', function (e) {
-        e.preventDefault();
-        openLink(this);
-    });
+  item.addEventListener('click', function (e) {
+    e.preventDefault();
+    openLink(this);
+  });
 });
 
 function openLink(element) {
-    var link = element.getAttribute('data-link');
-    localStorage.setItem('activeLink', link);
-    window.location.href = link;
+  var link = element.getAttribute('data-link');
+  localStorage.setItem('activeLink', link);
+  window.location.href = link;
 }
