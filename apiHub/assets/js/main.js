@@ -249,7 +249,10 @@ document.addEventListener('DOMContentLoaded', function () {
       var id_link = document.querySelector("#" + link.getAttribute('data-id'));
 
       content_service.forEach(link => link.classList.remove('active'));
-      id_link.classList.add('active');
+      if (id_link) {
+        id_link.classList.add('active');
+
+      }
       // Remove 'active' class from all links
       links.forEach(link => link.classList.remove('active'));
       // Add 'active' class to the clicked link
