@@ -1,6 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     checkLink();
+    window.addEventListener('hashchange', checkLink);
 });
 
 function checkLink() {
