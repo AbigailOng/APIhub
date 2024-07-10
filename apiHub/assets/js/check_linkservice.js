@@ -1,22 +1,25 @@
-window.onload = function () {
+
+document.addEventListener('DOMContentLoaded', function () {
     checkLink();
-};
+});
 
 function checkLink() {
-    const currentURL = window.location.href;
     const hashValue = window.location.hash.substring(1);
+    const links = document.querySelectorAll('.services-list a');
+    const content_service = document.querySelectorAll('.content-service');
+    var slug_service = document.querySelector('#slug_service');
+    slug_service.classList.add('active');
+    links.forEach(link => {
+        const dataId = link.getAttribute('data-id');
+        link.classList.remove('active');
+        if (hashValue === dataId) {
+            link.classList.add('active');
+            content_service.forEach(link => link.classList.remove('active'));
+            var id_link = document.querySelector("#" + link.getAttribute('data-id'));
+            if (id_link) {
+                id_link.classList.add('active');
 
-    if (currentURL.includes("service.html")) {
-        var link_service = document.querySelector('#slug_service');
-        link_service.classList.add('active');
-        const links = document.querySelectorAll('.services-list a');
-        links.forEach(link => {
-            const dataId = link.getAttribute('data-id');
-            if (hashValue === dataId) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
             }
-        });
-    }
+        }
+    });
 }
