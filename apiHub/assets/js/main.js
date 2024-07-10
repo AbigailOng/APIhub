@@ -272,8 +272,22 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+window.onload = function () {
+  checkLinkHome();
+};
+function checkLinkHome() {
+  const currentURL = window.location.href;
 
+  if (currentURL.includes("index.html")) {
+    const menus = document.querySelectorAll('#navmenu ul li a');
+    const slug_index = document.querySelector('#slug_index');
+    menus.forEach(menu => {
+      menu.classList.remove('active');
+    });
+    slug_index.classList.add('active');
 
+  }
+}
 // Submit contact 
 
 $("#submitContact").click(() => {
@@ -310,3 +324,4 @@ $("#submitContact").click(() => {
     window.alert("Missing fieds")
   }
 })
+

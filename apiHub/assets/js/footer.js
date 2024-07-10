@@ -44,14 +44,14 @@ section_footer.innerHTML = `<div class="footer-newsletter">
           </ul>
         </div>
         <!-- <i class="bi bi-chevron-right"></i> -->
-        <div class="col-lg-2 col-md-3 footer-links">
+        <div class="col-lg-2 col-md-3 footer-links ">
           <h4>Our Services</h4>
-          <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="service.html#web_desgin">Web Design</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="service.html#software">Software Development</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="service.html#_product">Product Management</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="service.html#_graphic">Graphic Design</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="service.html#web_desgin">Marketing</a></li>
+          <ul class="links-option-service" >
+            <li><i class="bi bi-chevron-right"></i> <a href="#" data-link="service.html" data-title="web_design">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#" data-link="service.html" data-title="software">Software Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#" data-link="service.html" data-title="product_management">Product Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#" data-link="service.html" data-title="graphic_design">Graphic Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#" data-link="service.html" data-title="marketing">Marketing</a></li>
           </ul>
         </div>
 
@@ -80,7 +80,7 @@ var slug_f_portfolio = document.querySelector('#slug_f_portfolio');
 var slug_f_contact = document.querySelector('#slug_f_contact');
 var slug_f_documentation = document.querySelector('#slug_f_documentation');
 var slug_f_policy = document.querySelector('#slug_f_policy');
-var list_sub_services = document.querySelectorAll('.ref_service');
+var list_sub_services = document.querySelectorAll('.links-option-service li a');
 
 if (slug_f_home) {
   slug_f_home.addEventListener('click', function (e) {
@@ -122,12 +122,20 @@ if (slug_f_policy) {
 list_sub_services.forEach(function (item) {
   item.addEventListener('click', function (e) {
     e.preventDefault();
-    openLink(this);
+    openLinkSub(this);
   });
 });
 
 function openLink(element) {
   var link = element.getAttribute('data-link');
+  localStorage.setItem('activeLink', link);
+  window.location.href = link;
+}
+
+function openLinkSub(element) {
+  var link = element.getAttribute('data-link');
+  var title = element.getAttribute('data-title');
+  link = link + '#' + title;
   localStorage.setItem('activeLink', link);
   window.location.href = link;
 }
