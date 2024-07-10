@@ -5,6 +5,7 @@ section_header.innerHTML = ` <div class="container-fluid container-xl position-r
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <h1 class="sitename"><img src="./assets/img/logo.jpg" alt="logo"></h1>
       </a>
+      <a class="btn-getstarted" href="#" id="slug_dashboard" data-link="dashboard.html">Dashboard</a>
 
       <nav id="navmenu" class="navmenu">
       
@@ -27,7 +28,6 @@ section_header.innerHTML = ` <div class="container-fluid container-xl position-r
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="#" id="slug_dashboard" data-link="dashboard.html">Dashboard</a>
       <a class="btn-sign-in btn-sign" href="#" id="slug_signIn" data-link="sign-in.html">Sign In</a>
       <a class="btn-sign-up btn-sign" href="#" id="slug_signUp" data-link="sign-up.html">Sign Up</a>
 

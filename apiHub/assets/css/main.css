@@ -224,18 +224,21 @@ h6 {
     order: 3;
   }
 }
+
 @media (max-width: 678px) {
   .sign--mb {
     display: flex;
-    align-items:center ;
+    align-items: center;
     margin: 0 auto;
     width: fit-content;
   }
-  .header .btn-sign.btn-sign-mb{
+
+  .header .btn-sign.btn-sign-mb {
     display: block;
-  color: var(--contrast-color);
+    color: var(--contrast-color);
   }
 }
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -951,13 +954,14 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
-.content-service{
+.content-service {
   display: none;
 }
 
-.content-service.active{
+.content-service.active {
   display: block;
 }
+
 .services .service-item {
   box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
   background-color: var(--surface-color);
@@ -1638,15 +1642,25 @@ section,
 }
 
 
+@media (max-width: 1400px) AND (min-width:1200px) {
+
+  .header .btn-sign-up,
+  .header .btn-sign-up:focus,
+  .header .btn-sign-in,
+  .header .btn-sign-in:focus {
+    padding: 8px 16px;
+  }
+}
+
 @media (max-width: 1200px) {
   .header .btn-sign {
-      order: 2;
-      margin: 0 20px 0 0;
+    order: 2;
+    margin: 0 20px 0 0;
   }
 }
 
 @media (max-width:678px) {
   .header .btn-sign {
-      display: none;
+    display: none;
   }
 }
