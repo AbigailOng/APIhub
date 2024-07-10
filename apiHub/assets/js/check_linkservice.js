@@ -19,6 +19,10 @@ function checkLink() {
             var id_link = document.querySelector("#" + link.getAttribute('data-id'));
             if (id_link) {
                 id_link.classList.add('active');
+                var serviceDetails = document.querySelector("#service-details");
+                if (serviceDetails) {
+                    serviceDetails.scrollIntoView({ behavior: 'smooth' });
+                }
 
             }
         }

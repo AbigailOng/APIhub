@@ -1636,3 +1636,17 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+
+@media (max-width: 1200px) {
+  .header .btn-sign {
+      order: 2;
+      margin: 0 20px 0 0;
+  }
+}
+
+@media (max-width:678px) {
+  .header .btn-sign {
+      display: none;
+  }
+}
