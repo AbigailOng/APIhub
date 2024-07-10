@@ -2,9 +2,9 @@ var section_header = document.querySelector('#header');
 
 section_header.innerHTML = ` <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      
-       img src="../img/logo.png" alt="logo">
-      
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <h1 class="sitename"><img src="../assets/img/logo.jpg" alt="logo"></h1>
+      </a>
 
       <nav id="navmenu" class="navmenu">
       
